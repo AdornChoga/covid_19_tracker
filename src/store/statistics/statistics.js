@@ -1,6 +1,11 @@
+import axios from 'axios';
+import { DateTime } from 'luxon';
+
+const currentDate = DateTime.now().toISODate();
+
 const initialState = {
   loading: false,
-  dates: { current: '', from: '', to: '' },
+  dates: { currentDate, from: '', to: '' },
   countries: [],
 };
 
@@ -17,10 +22,13 @@ const actionCreators = {
   stopLoading: () => ({
     type: ACTIONS.STOP_LOADING,
   }),
-  initializeState: () => ({
-    type: ACTIONS.INITIALIZE_STATE,
-    payload: { statistics: [] },
-  }),
+  initializeState: () => async (dispatch) => {
+    const path = 'https://api.covid19tracking.narrativa.com/api/';
+    const response = await axios.get(`${path}${currentDate}`);
+    let { countries } = response.data.dates[currentDate];
+    countries = Object.values(countries);
+    dispatch({ type: ACTIONS.INITIALIZE_STATE, payload: { countries } });
+  },
 };
 
 const statistics = (state = initialState, action) => {
@@ -30,7 +38,7 @@ const statistics = (state = initialState, action) => {
     case ACTIONS.STOP_LOADING:
       return { ...state, loading: false };
     case ACTIONS.INITIALIZE_STATE:
-      return { ...state, countries: action.payload.statistics };
+      return { ...state, countries: action.payload.countries };
     default:
       return state;
   }
