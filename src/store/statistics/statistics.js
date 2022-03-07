@@ -1,6 +1,11 @@
+// import axios from 'axios';
+import { DateTime } from 'luxon';
+
+const currentDate = DateTime.now().toISODate();
+
 const initialState = {
   loading: false,
-  dates: { current: '', from: '', to: '' },
+  dates: { currentDate, from: '', to: '' },
   countries: [],
 };
 
