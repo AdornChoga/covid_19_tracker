@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Header from '../header/Header';
 import { actionCreators } from '../../store/statistics/statistics';
+import Countries from '../countries/Countries';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,10 @@ const HomePage = () => {
     }
   }, []);
   return (
-    <Header />
+    <>
+      <Header />
+      <Countries />
+    </>
   );
 };
 

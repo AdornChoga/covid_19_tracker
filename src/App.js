@@ -1,8 +1,8 @@
 import React from 'react';
-import HomePage from './components/pages/HomePage';
+import Views from './Views/Views';
 
 const App = () => (
-  <HomePage />
+  <Views />
 );
 
 export default App;

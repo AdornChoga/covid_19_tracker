@@ -1,0 +1,12 @@
+.countries_container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  border: solid red;
+}
+
+.country {
+  width: 50%;
+  height: 15rem;
+  background-color: #EC4C8A;
+}
