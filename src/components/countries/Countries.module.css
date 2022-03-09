@@ -1,0 +1,15 @@
+.countries_container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  border: solid red;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  margin: 0;
+  width: 50%;
+  height: 15rem;
+  background-color: #ec4c8a;
+}
