@@ -5,8 +5,11 @@
   border: solid red;
 }
 
-.country {
+.link {
+  text-decoration: none;
+  color: black;
+  margin: 0;
   width: 50%;
   height: 15rem;
-  background-color: #EC4C8A;
+  background-color: #ec4c8a;
 }

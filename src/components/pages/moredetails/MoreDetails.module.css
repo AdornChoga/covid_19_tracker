@@ -1,0 +1,15 @@
+* {
+  font-size: 2rem;
+}
+
+.stats_and_regions {
+  border: solid red;
+}
+
+.regions {
+  border: solid;
+}
+
+.country_stats {
+  border: solid;
+}

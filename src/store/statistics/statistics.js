@@ -5,7 +5,7 @@ import imagesObj from '../../data/imagesObj';
 const currentDate = DateTime.now().toISODate();
 
 const initialState = {
-  loading: false,
+  loading: true,
   dates: { currentDate, from: '', to: '' },
   countries: [],
 };
@@ -40,24 +40,30 @@ const initializeState = () => async (dispatch) => {
     const [img] = Object.keys(imagesObj)
       .filter((key) => imagesObj[`${key}`] === country.name);
 
-    if (img === undefined) {
-      return {
-        name: country.name,
-        id: country.id,
-        todayOpenCases: country.today_open_cases,
-        map: '',
-      };
-    }
-    return {
-      name: country.name,
-      id: country.id,
+    const storedCountry = {
+      name: country.name.replace(/[^a-zA-Z0-9 ]/g, ''),
+      id: country.id.replace('*', ''),
+      regions: country.regions,
+      todayNewCases: country.today_new_open_cases,
+      todayRecoveries: country.today_new_recovered,
+      todayDeaths: country.today_new_deaths,
       todayOpenCases: country.today_open_cases,
-      map: img,
+      totalCasesRecorded: country.today_confirmed,
+      totalRecoveriesRecorded: country.today_recovered,
+      totalDeathsRecorded: country.today_deaths,
     };
+
+    if (img === undefined) {
+      storedCountry.image = '';
+    } else {
+      storedCountry.image = img;
+    }
+    return storedCountry;
   });
 
   countries = countries.filter((country) => country !== null);
   dispatch({ type: ACTIONS.INITIALIZE_STATE, payload: { countries } });
+  dispatch(stopLoading());
 };
 
 const actionCreators = {

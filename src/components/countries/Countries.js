@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import Country from './Country';
 import classes from './Countries.module.css';
 
@@ -9,7 +11,9 @@ function Countries() {
     <div className={classes.countries_container}>
       {
         statistics.countries.map((country) => (
-          <Country key={country.id} country={country} />
+          <Link key={uuidv4()} to={`/${country.id}`} className={classes.link}>
+            <Country country={country} />
+          </Link>
         ))
       }
     </div>
