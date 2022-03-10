@@ -6,14 +6,21 @@ const currentDate = DateTime.now().toISODate();
 
 const initialState = {
   loading: true,
+  fetchError: false,
+  filtering: false,
   dates: { currentDate, from: '', to: '' },
   countries: [],
 };
 
 const ACTIONS = {
   START_LOADING: 'loading/start',
-  INITIALIZE_STATE: 'statistics/initialize',
   STOP_LOADING: 'loading/stop',
+  START_FILTERING: 'filtering/start',
+  STOP_FILTERING: 'filtering/stop',
+  INITIALIZE_STATE: 'statistics/initialize',
+  FILTER_BY_ONE_DATE: 'statistics/date/one',
+  CATCH_ERROR: 'statistics/fetch/error',
+  REMOVE_ERR0R: 'statistics/fetch/successful',
 };
 
 const stopLoading = () => ({
@@ -24,10 +31,32 @@ const startLoading = () => ({
   type: ACTIONS.START_LOADING,
 });
 
-const initializeState = () => async (dispatch) => {
+const startFiltering = () => ({
+  type: ACTIONS.START_FILTERING,
+});
+
+const stopFiltering = () => ({
+  type: ACTIONS.STOP_FILTERING,
+});
+
+const filterByOneDate = (date) => ({
+  type: ACTIONS.FILTER_BY_ONE_DATE,
+  payload: date,
+});
+
+const setAppStore = (date = currentDate, numDates = 1) => async (dispatch) => {
   const path = 'https://api.covid19tracking.narrativa.com/api/';
-  const response = await axios.get(`${path}${currentDate}`);
-  let { countries } = response.data.dates[currentDate];
+  let response;
+  if (numDates === 1) {
+    try {
+      response = await axios.get(`${path}${date}`);
+      dispatch({ type: ACTIONS.REMOVE_ERR0R });
+    } catch (err) {
+      dispatch({ type: ACTIONS.CATCH_ERROR });
+      return;
+    }
+  }
+  let { countries } = response.data.dates[date];
   const countriesToRemove = [
     'Diamond Princess', 'MS Zaandam',
     'East Timor', 'West Bank and Gaza',
@@ -69,7 +98,10 @@ const initializeState = () => async (dispatch) => {
 const actionCreators = {
   startLoading,
   stopLoading,
-  initializeState,
+  startFiltering,
+  stopFiltering,
+  setAppStore,
+  filterByOneDate,
 };
 
 const statistics = (state = initialState, action) => {
@@ -78,8 +110,18 @@ const statistics = (state = initialState, action) => {
       return { ...state, loading: true };
     case ACTIONS.STOP_LOADING:
       return { ...state, loading: false };
+    case ACTIONS.CATCH_ERROR:
+      return { ...state, fetchError: true };
+    case ACTIONS.REMOVE_ERR0R:
+      return { ...state, fetchError: false };
+    case ACTIONS.START_FILTERING:
+      return { ...state, filtering: true };
+    case ACTIONS.STOP_FILTERING:
+      return { ...state, filtering: false };
     case ACTIONS.INITIALIZE_STATE:
       return { ...state, countries: action.payload.countries };
+    case ACTIONS.FILTER_BY_ONE_DATE:
+      return { ...state, dates: { ...state.dates, currentDate: action.payload } };
     default:
       return state;
   }
