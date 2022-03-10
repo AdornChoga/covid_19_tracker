@@ -45,6 +45,7 @@ const filterByOneDate = (date) => ({
 });
 
 const setAppStore = (date = currentDate, numDates = 1) => async (dispatch) => {
+  dispatch({ type: ACTIONS.START_LOADING });
   const path = 'https://api.covid19tracking.narrativa.com/api/';
   let response;
   if (numDates === 1) {
@@ -83,9 +84,10 @@ const setAppStore = (date = currentDate, numDates = 1) => async (dispatch) => {
     };
 
     if (img === undefined) {
-      storedCountry.image = '';
+      storedCountry.image = 'https://raw.githubusercontent.com/djaiss/mapsicon/master/oceania/gu/96.png';
     } else {
-      storedCountry.image = img;
+      storedCountry
+        .image = `https://raw.githubusercontent.com/djaiss/mapsicon/master/all/${img.toLowerCase()}/96.png`;
     }
     return storedCountry;
   });

@@ -137,7 +137,6 @@ const imagesObj = {
   MU: 'Mauritius',
   YT: 'Mayotte',
   MX: 'Mexico',
-  FM: 'Micronesia',
   MD: 'Moldova',
   MC: 'Monaco',
   MN: 'Mongolia',

@@ -10,6 +10,7 @@ header {
   font-size: 2rem;
   background-color: #d8457d;
   color: white;
+  z-index: 1;
 }
 
 .prev_page {

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import classes from './MoreDetails.module.css';
-import Header from '../../header/Header';
-import Country from '../../countries/Country';
+import Header from '../header/Header';
+import Country from '../countries/Country';
 
 const CountryStats = (props) => {
   const [state, setState] = useState(false);

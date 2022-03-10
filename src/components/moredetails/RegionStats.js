@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from '../../header/Header';
-import Country from '../../countries/Country';
+import Header from '../header/Header';
+import Country from '../countries/Country';
 
 const RegionStats = (props) => {
   const { region, country } = props;

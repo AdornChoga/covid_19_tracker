@@ -4,11 +4,17 @@ import classes from './Countries.module.css';
 
 const Country = (props) => {
   const { country } = props;
-  const { name, todayOpenCases } = country;
+  const { name, image, todayOpenCases } = country;
   return (
     <div className={classes.country}>
-      <h3>{name}</h3>
-      <p>{todayOpenCases}</p>
+      <img src={image} alt="map" />
+      <div>
+        <span className={classes.country_name}>{name}</span>
+        <span className={classes.country_open_cases}>
+          Open Cases:&nbsp;&nbsp;&nbsp;
+          {todayOpenCases}
+        </span>
+      </div>
     </div>
   );
 };
@@ -16,6 +22,7 @@ const Country = (props) => {
 Country.propTypes = {
   country: PropTypes.shape({
     name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
     todayOpenCases: PropTypes.number.isRequired,
   }).isRequired,
 };
