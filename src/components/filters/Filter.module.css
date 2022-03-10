@@ -1,0 +1,57 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fetch_error_msg {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.5rem;
+  background-color: white;
+  padding: 1.3rem;
+  border-radius: 0.8rem;
+}
+
+.info_icon {
+  color: red;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: silver;
+  min-height: 20rem;
+  border-radius: 0.8rem;
+  padding: 2rem 2rem;
+}
+
+.current_date {
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+}
+
+.submit {
+  padding: 0.3rem;
+  border-radius: 0.8rem;
+  border: none;
+  width: fit-content;
+  color: white;
+  background-color: #ec4c8a;
+}
+
+.submit:active {
+  transform: scale(0.9);
+}
