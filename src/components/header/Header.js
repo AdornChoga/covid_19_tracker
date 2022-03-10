@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
-import { FaSearchengin } from 'react-icons/fa';
+import { FaAngleDoubleLeft, FaFilter } from 'react-icons/fa';
+import { AiOutlineSearch } from 'react-icons/ai';
 import { actionCreators } from '../../store/statistics/statistics';
 import classes from './Header.module.css';
 
@@ -9,6 +10,7 @@ const Header = () => {
   const { countries } = useSelector((state) => state.statistics);
   const [search, setSearch] = useState('');
   const [results, setResults] = useState([]);
+  const [searchBar, setSearchBar] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -28,6 +30,7 @@ const Header = () => {
       setResults([]);
       setSearch('');
     }
+    setSearchBar(!searchBar);
   };
 
   const emptyResults = () => {
@@ -53,31 +56,36 @@ const Header = () => {
 
   return (
     <header>
-      <h2>Covid 19 Tracker</h2>
-      <button type="button" onClick={() => { navigate(-1); }}>Back</button>
-      <form>
-        <input type="search" value={search} placeholder="search country" onChange={handleSearch} />
-        <button type="submit" onClick={handleSearchSubmission}>
-          <FaSearchengin />
-        </button>
-        <br />
-        <ul className={classes.search_results}>
-          {
-            results.map((result) => (
-              <li key={result.id}>
-                <Link to={`/${result.id}`} onClick={emptyResults}>
-                  {result.name}
-                </Link>
-              </li>
-            ))
-          }
-        </ul>
-      </form>
+      <FaAngleDoubleLeft onClick={() => { navigate(-1); }} className={classes.prev_page} />
+      {
+          !searchBar ? (
+            <h1>Today&apos;s Statistics</h1>
+          ) : ''
+        }
       <div>
-        <h3>Today&apos;s Stats</h3>
-        <button type="button" className={classes.filter} onClick={handleFilter}>
-          Filter
-        </button>
+        <form>
+          {
+              searchBar ? (
+                <input type="search" value={search} placeholder="search country" onChange={handleSearch} />
+              ) : ''
+            }
+          <button type="submit" onClick={handleSearchSubmission}>
+            <AiOutlineSearch className={classes.search_icon} />
+          </button>
+          <br />
+          <ul className={classes.search_results}>
+            {
+              results.map((result) => (
+                <li key={result.id}>
+                  <Link to={`/${result.id}`} onClick={emptyResults}>
+                    {result.name}
+                  </Link>
+                </li>
+              ))
+            }
+          </ul>
+        </form>
+        <FaFilter className={classes.filter} onClick={handleFilter} />
       </div>
     </header>
   );
