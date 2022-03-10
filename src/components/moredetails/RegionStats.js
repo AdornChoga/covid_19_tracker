@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../header/Header';
 import Country from '../countries/Country';
+import classes from './MoreDetails.module.css';
 
 const RegionStats = (props) => {
   const { region, country } = props;
@@ -14,39 +15,39 @@ const RegionStats = (props) => {
   return (
     <>
       <Header />
-      <div>
+      <div className={classes.country}>
         <Country country={country} />
-        <h3>
-          Region:&nbsp;&nbsp;&nbsp;
-          {regionName}
-        </h3>
-        <ul>
-          <li>
-            Today&apos;s new cases:&nbsp;&nbsp;&nbsp;
-            {todayNewCases}
-          </li>
-          <li>
-            Today&apos;s new recoveries:&nbsp;&nbsp;&nbsp;
-            {todayRecoveries}
-          </li>
-          <li>
-            Today&apos;s new deaths:&nbsp;&nbsp;&nbsp;
-            {todayDeaths}
-          </li>
-          <li>
-            Total cases recorded:&nbsp;&nbsp;&nbsp;
-            {totalCasesRecorded}
-          </li>
-          <li>
-            Total recoveries recorded:&nbsp;&nbsp;&nbsp;
-            {totalRecoveriesRecorded}
-          </li>
-          <li>
-            Total deaths recorded:&nbsp;&nbsp;&nbsp;
-            {totalDeathsRecorded}
-          </li>
-        </ul>
       </div>
+      <h4>
+        Region:&nbsp;&nbsp;&nbsp;
+        {regionName}
+      </h4>
+      <ul className={classes.region_stats}>
+        <li>
+          Today&apos;s new cases:&nbsp;&nbsp;&nbsp;
+          {todayNewCases}
+        </li>
+        <li>
+          Today&apos;s new recoveries:&nbsp;&nbsp;&nbsp;
+          {todayRecoveries}
+        </li>
+        <li>
+          Today&apos;s new deaths:&nbsp;&nbsp;&nbsp;
+          {todayDeaths}
+        </li>
+        <li>
+          Total cases recorded:&nbsp;&nbsp;&nbsp;
+          {totalCasesRecorded}
+        </li>
+        <li>
+          Total recoveries recorded:&nbsp;&nbsp;&nbsp;
+          {totalRecoveriesRecorded}
+        </li>
+        <li>
+          Total deaths recorded:&nbsp;&nbsp;&nbsp;
+          {totalDeathsRecorded}
+        </li>
+      </ul>
     </>
   );
 };

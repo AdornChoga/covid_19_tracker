@@ -2,14 +2,62 @@
   font-size: 2rem;
 }
 
-.stats_and_regions {
-  border: solid red;
+i {
+  cursor: pointer;
+}
+
+.country {
+  color: rgb(219, 218, 218);
+  background-color: #fd5294;
+}
+
+ul {
+  margin: 0;
 }
 
 .regions {
-  border: solid;
+  height: 41.1rem;
+  overflow: auto;
+  color: white;
 }
 
-.country_stats {
-  border: solid;
+.regions li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+.country_stats,
+.region_stats {
+  color: white;
+}
+
+.country_stats li,
+.regions li,
+.region_stats li {
+  padding: 2.3rem 1rem;
+}
+
+.country_stats li:nth-child(odd),
+.regions li:nth-child(odd),
+.region_stats li:nth-child(odd) {
+  background-color: #ea4a88;
+}
+
+.country_stats li:nth-child(even),
+.regions li:nth-child(even),
+.region_stats li:nth-child(even) {
+  background-color: #cf4378;
+}
+
+h4 {
+  margin: 0;
+  background-color: #cf4378;
+  color: white;
+  padding: 0.4rem 0.2rem;
 }

@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
+import { FaArrowCircleRight, FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import classes from './MoreDetails.module.css';
 import Header from '../header/Header';
 import Country from '../countries/Country';
 
 const CountryStats = (props) => {
-  const [state, setState] = useState(false);
+  const [regionsMenu, toggleRegions] = useState(false);
   const { country } = props;
   const {
     regions, todayNewCases, todayRecoveries, todayDeaths,
@@ -15,30 +16,38 @@ const CountryStats = (props) => {
   } = country;
 
   const toggleMenu = () => {
-    setState(!state);
+    toggleRegions(!regionsMenu);
   };
 
   return (
     <>
       <Header />
       <div>
-        <div>
+        <div className={classes.country}>
           <Country country={country} />
           {
             regions.length > 0 ? (
-              <button type="button" onClick={toggleMenu}>Regions</button>
+              <button type="button" onClick={toggleMenu}>
+                Regions&nbsp;
+                {
+                  regionsMenu ? (
+                    <FaAngleUp />
+                  ) : <FaAngleDown />
+                }
+              </button>
             ) : ''
           }
         </div>
         <div className={classes.stats_and_regions}>
           {
-            state ? (
+            regionsMenu ? (
               <ul className={classes.regions}>
                 {
                   regions.map((region) => (
                     <li key={uuidv4()}>
-                      <Link to={`${region.id}`}>
-                        {region.name}
+                      <span>{region.name}</span>
+                      <Link to={`${region.id}`} className={classes.link}>
+                        <FaArrowCircleRight />
                       </Link>
                     </li>
                   ))
