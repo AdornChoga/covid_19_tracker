@@ -19,6 +19,7 @@ ul {
   height: 41.1rem;
   overflow: auto;
   color: white;
+  background-color: #fd5294;
 }
 
 .regions li {
