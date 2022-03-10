@@ -24,3 +24,19 @@ header > div * {
 .filter {
   font-size: 2rem;
 }
+
+.search_results {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  width: 30rem;
+  background-color: white;
+  position: fixed;
+  list-style-type: none;
+}
+
+.search_results li:first-child a {
+  color: red;
+}
