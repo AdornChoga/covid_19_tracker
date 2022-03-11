@@ -6,14 +6,12 @@ import { FaArrowCircleRight, FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import classes from './MoreDetails.module.css';
 import Header from '../header/Header';
 import CountryHeader from './CountryHeader';
+import Details from './Details';
 
 const CountryStats = (props) => {
   const [regionsMenu, toggleRegions] = useState(false);
   const { country } = props;
-  const {
-    regions, todayNewCases, todayRecoveries, todayDeaths,
-    totalCasesRecorded, totalRecoveriesRecorded, totalDeathsRecorded,
-  } = country;
+  const { regions } = country;
 
   const toggleMenu = () => {
     toggleRegions(!regionsMenu);
@@ -53,34 +51,7 @@ const CountryStats = (props) => {
                   ))
                 }
               </ul>
-            ) : (
-              <ul className={classes.country_stats}>
-                <li>
-                  Today&apos;s new cases:&nbsp;&nbsp;&nbsp;
-                  {todayNewCases}
-                </li>
-                <li>
-                  Today&apos;s new recoveries:&nbsp;&nbsp;&nbsp;
-                  {todayRecoveries}
-                </li>
-                <li>
-                  Today&apos;s new deaths:&nbsp;&nbsp;&nbsp;
-                  {todayDeaths}
-                </li>
-                <li>
-                  Total cases recorded:&nbsp;&nbsp;&nbsp;
-                  {totalCasesRecorded}
-                </li>
-                <li>
-                  Total recoveries recorded:&nbsp;&nbsp;&nbsp;
-                  {totalRecoveriesRecorded}
-                </li>
-                <li>
-                  Total deaths recorded:&nbsp;&nbsp;&nbsp;
-                  {totalDeathsRecorded}
-                </li>
-              </ul>
-            )
+            ) : <Details details={country} />
           }
         </div>
       </div>
@@ -90,14 +61,7 @@ const CountryStats = (props) => {
 
 CountryStats.propTypes = {
   country: PropTypes.shape({
-    name: PropTypes.string.isRequired,
     regions: PropTypes.instanceOf(Array).isRequired,
-    todayNewCases: PropTypes.number.isRequired,
-    todayRecoveries: PropTypes.number.isRequired,
-    todayDeaths: PropTypes.number.isRequired,
-    totalCasesRecorded: PropTypes.number.isRequired,
-    totalRecoveriesRecorded: PropTypes.number.isRequired,
-    totalDeathsRecorded: PropTypes.number.isRequired,
   }).isRequired,
 };
 

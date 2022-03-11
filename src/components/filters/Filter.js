@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { FaExclamationCircle } from 'react-icons/fa';
@@ -7,13 +7,9 @@ import classes from './Filter.module.css';
 
 const Filter = (props) => {
   const { fetchError } = props;
-  const [error] = useState(fetchError);
   const [input, setInput] = useState('');
   const [dates, setDates] = useState({ currentDate: input, to: '', from: '' });
   const dispatch = useDispatch();
-
-  useEffect(() => {
-  }, [error]);
 
   const handleDateChange = (e) => {
     setInput(e.target.value);
@@ -25,7 +21,7 @@ const Filter = (props) => {
     if (dates.currentDate !== '') {
       dispatch(actionCreators.filterByOneDate(dates.currentDate));
       dispatch(actionCreators.setAppStore(dates.currentDate, 1));
-      if (!error) {
+      if (!fetchError) {
         dispatch(actionCreators.filtering());
       }
     }
@@ -39,7 +35,7 @@ const Filter = (props) => {
 
   return (
     <div className={classes.filter_container} id="exit_filter" onClick={exitFilter} aria-hidden="true">
-      { error ? (
+      { fetchError ? (
         <h5 className={classes.fetch_error_msg}>
           <FaExclamationCircle className={classes.info_icon} />
           Sorry, could not get data for that date

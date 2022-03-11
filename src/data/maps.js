@@ -1,4 +1,4 @@
-const imagesObj = {
+const countriesISOCodes = {
   AF: 'Afghanistan',
   AL: 'Albania',
   DZ: 'Algeria',
@@ -239,4 +239,4 @@ const imagesObj = {
   ZW: 'Zimbabwe',
 };
 
-export default imagesObj;
+export default countriesISOCodes;

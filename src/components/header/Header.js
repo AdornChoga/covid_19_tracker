@@ -36,6 +36,7 @@ const Header = () => {
   const emptyResults = () => {
     setResults([]);
     setSearch('');
+    setSearchBar(!searchBar);
   };
 
   useEffect(() => {
@@ -61,7 +62,7 @@ const Header = () => {
           !searchBar ? (
             <h1>
               {
-                dates.currentDate === currentDate ? 'Today\'s' : currentDate
+                dates.currentDate === currentDate ? 'Today\'s' : dates.currentDate
               }
               &nbsp;&nbsp;&nbsp;Statistics
             </h1>

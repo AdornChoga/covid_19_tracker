@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Country from './Country';
 import classes from './Countries.module.css';
 
-function Countries() {
+const Countries = () => {
   const { statistics } = useSelector((state) => state);
   return (
     <div className={classes.countries_container}>
@@ -15,6 +15,6 @@ function Countries() {
       }
     </div>
   );
-}
+};
 
 export default Countries;

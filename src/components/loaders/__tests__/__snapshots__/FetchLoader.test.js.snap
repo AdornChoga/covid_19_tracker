@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`is loading spinner page snapshot created 1`] = `
+<div
+  className="loader_container"
+  data-testid="loading_spinner_page"
+>
+  <span
+    className="css-9i2kbp"
+  />
+  <h3>
+    Fetching Covid-19 Statistics...
+  </h3>
+</div>
+`;
