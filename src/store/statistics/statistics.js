@@ -15,8 +15,7 @@ const initialState = {
 const ACTIONS = {
   START_LOADING: 'loading/start',
   STOP_LOADING: 'loading/stop',
-  START_FILTERING: 'filtering/start',
-  STOP_FILTERING: 'filtering/stop',
+  FILTER: 'filtering/start',
   INITIALIZE_STATE: 'statistics/initialize',
   FILTER_BY_ONE_DATE: 'statistics/date/one',
   CATCH_ERROR: 'statistics/fetch/error',
@@ -31,12 +30,8 @@ const startLoading = () => ({
   type: ACTIONS.START_LOADING,
 });
 
-const startFiltering = () => ({
-  type: ACTIONS.START_FILTERING,
-});
-
-const stopFiltering = () => ({
-  type: ACTIONS.STOP_FILTERING,
+const filtering = () => ({
+  type: ACTIONS.FILTER,
 });
 
 const filterByOneDate = (date) => ({
@@ -100,8 +95,7 @@ const setAppStore = (date = currentDate, numDates = 1) => async (dispatch) => {
 const actionCreators = {
   startLoading,
   stopLoading,
-  startFiltering,
-  stopFiltering,
+  filtering,
   setAppStore,
   filterByOneDate,
 };
@@ -116,10 +110,8 @@ const statistics = (state = initialState, action) => {
       return { ...state, fetchError: true };
     case ACTIONS.REMOVE_ERR0R:
       return { ...state, fetchError: false };
-    case ACTIONS.START_FILTERING:
-      return { ...state, filtering: true };
-    case ACTIONS.STOP_FILTERING:
-      return { ...state, filtering: false };
+    case ACTIONS.FILTER:
+      return { ...state, filtering: !state.filtering };
     case ACTIONS.INITIALIZE_STATE:
       return { ...state, countries: action.payload.countries };
     case ACTIONS.FILTER_BY_ONE_DATE:

@@ -1,4 +1,4 @@
-.container {
+.filter_container {
   position: fixed;
   top: 0;
   left: 0;
@@ -26,7 +26,7 @@
   color: red;
 }
 
-.container form {
+.filter_container form {
   display: flex;
   flex-direction: column;
   justify-content: center;

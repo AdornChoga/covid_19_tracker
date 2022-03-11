@@ -15,7 +15,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const handleFilter = () => {
-    dispatch(actionCreators.startFiltering());
+    dispatch(actionCreators.filtering());
   };
 
   const handleSearch = (e) => {
