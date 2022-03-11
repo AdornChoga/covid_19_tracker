@@ -40,7 +40,7 @@ const Header = () => {
 
   useEffect(() => {
     if (search !== '') {
-      let searchedCountry = search.replace(/[^a-zA-Z]/g, '').toLocaleLowerCase();
+      let searchedCountry = search.replace(/[^a-zA-Z]/g, '').toLowerCase();
       searchedCountry = searchedCountry.charAt(0).toUpperCase() + searchedCountry.slice(1);
       const possibleCountries = [];
       countries.forEach((country) => {

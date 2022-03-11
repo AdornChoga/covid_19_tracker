@@ -89,3 +89,10 @@ form button {
 .search_results li:first-child a {
   color: red;
 }
+
+@media (min-width: 768px) {
+  form input,
+  .search_results {
+    width: 40vw;
+  }
+}

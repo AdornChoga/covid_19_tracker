@@ -22,9 +22,9 @@ const CountryStats = (props) => {
   return (
     <>
       <Header />
-      <div>
-        <div className={classes.country}>
-          <Country country={country} />
+      <div className={classes.main_container}>
+        <div>
+          <Country country={country} className={classes.country} />
           {
             regions.length > 0 ? (
               <button type="button" onClick={toggleMenu}>

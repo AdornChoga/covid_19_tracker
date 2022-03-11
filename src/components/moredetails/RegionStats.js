@@ -13,7 +13,7 @@ const RegionStats = (props) => {
   } = region;
 
   return (
-    <>
+    <div className={classes.main_container}>
       <Header />
       <div className={classes.country}>
         <Country country={country} />
@@ -48,7 +48,7 @@ const RegionStats = (props) => {
           {totalDeathsRecorded}
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 

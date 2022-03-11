@@ -49,9 +49,21 @@ img {
   font-size: 1.2rem;
 }
 
+@media (min-width: 500px) {
+  img {
+    width: 17rem;
+    height: auto;
+  }
+}
+
 @media (min-width: 768px) {
   .countries_container {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  img {
+    width: 18rem;
+    height: auto;
   }
 
   .country {
@@ -73,12 +85,21 @@ img {
   }
 
   .country {
-    min-height: 25rem;
+    min-height: 28rem;
+    padding: 2rem 1rem;
   }
 
   img {
-    width: 12.8rem;
+    width: 19rem;
     height: auto;
+  }
+
+  .country_name {
+    font-size: 3rem;
+  }
+
+  .country_open_cases {
+    font-size: 1.7rem;
   }
 
   .link:nth-child(odd) {
