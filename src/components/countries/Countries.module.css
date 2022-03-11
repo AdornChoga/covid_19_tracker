@@ -15,16 +15,6 @@ a {
   color: black;
 }
 
-.country:nth-child(4n-2),
-.country:nth-child(4n-1) {
-  background-color: #cf4278;
-}
-
-.country:nth-child(4n-3),
-.country:nth-child(4n-4) {
-  background-color: #d9427d;
-}
-
 .country {
   display: flex;
   flex-direction: column;
@@ -41,6 +31,16 @@ a {
   align-self: flex-end;
   text-align: right;
   color: #e7e3e3;
+}
+
+.country:nth-child(4n-2),
+.country:nth-child(4n-1) {
+  background-color: #cf4278;
+}
+
+.country:nth-child(4n-3),
+.country:nth-child(4n-4) {
+  background-color: #d9427d;
 }
 
 img {

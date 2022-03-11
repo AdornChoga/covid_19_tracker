@@ -106,16 +106,11 @@ h4 {
   .region_stats,
   .regions {
     grid-template-columns: 1fr 1fr;
+    height: 31rem;
   }
 
   .country {
     min-height: 25rem;
-  }
-
-  .country_stats,
-  .regions,
-  .region_stats {
-    height: 31rem;
   }
 
   .country_stats > li:nth-child(4n-2),
@@ -144,7 +139,7 @@ h4 {
   }
 
   .country img {
-    width: 18rem
+    width: 18rem;
   }
 
   .country_name {
