@@ -36,6 +36,7 @@ const Header = () => {
   const emptyResults = () => {
     setResults([]);
     setSearch('');
+    setSearchBar(!searchBar);
   };
 
   useEffect(() => {

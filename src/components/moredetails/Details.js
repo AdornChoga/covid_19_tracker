@@ -5,9 +5,8 @@ import classes from './MoreDetails.module.css';
 const Details = (props) => {
   const { details } = props;
   const {
-    today_new_open_cases: todayNewCases, today_new_recovered: todayRecoveries,
-    today_new_deaths: todayDeaths, today_confirmed: totalCasesRecorded,
-    today_recovered: totalRecoveriesRecorded, today_deaths: totalDeathsRecorded,
+    todayNewCases, todayRecoveries, todayDeaths, totalCasesRecorded,
+    totalRecoveriesRecorded, totalDeathsRecorded,
   } = details;
   return (
     <ul className={classes.statistics}>
@@ -41,12 +40,12 @@ const Details = (props) => {
 
 Details.propTypes = {
   details: PropTypes.shape({
-    today_new_open_cases: PropTypes.number,
-    today_new_recovered: PropTypes.number,
-    today_new_deaths: PropTypes.number,
-    today_confirmed: PropTypes.number,
-    today_recovered: PropTypes.number,
-    today_deaths: PropTypes.number,
+    todayNewCases: PropTypes.number,
+    todayRecoveries: PropTypes.number,
+    todayDeaths: PropTypes.number,
+    totalCasesRecorded: PropTypes.number,
+    totalRecoveriesRecorded: PropTypes.number,
+    totalDeathsRecorded: PropTypes.number,
   }).isRequired,
 };
 
