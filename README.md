@@ -5,7 +5,9 @@
 > In this project, the  statistics on Covid-19 are being fetched from [Narrativa API](https://covid19tracking.narrativa.com/index_en.html) and displayed on the various pages of the application. The pages are:
 - A home page where countries are listed with their up-to-date open Covid-19 cases.
 - A details page which shows more statistics about any selected country.
-> Some countries have their regions statistics displayed on the details page when a user navigates to the country than a specific region.
+
+> Some countries have their regions listed on the details page of each respective country and users can navigate to each region's details page.
+
 > The statistics provided by this web app are for 191 countries and users can search for a specific country as well as request the statistics from a particular date using a date filter in the app's header.
 
 
