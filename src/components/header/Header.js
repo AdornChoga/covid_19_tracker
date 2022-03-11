@@ -7,7 +7,7 @@ import { actionCreators, currentDate } from '../../store/statistics/statistics';
 import classes from './Header.module.css';
 
 const Header = () => {
-  const { countries, dates } = useSelector((state) => state.statistics);
+  const { countries, dates } = useSelector((state) => state.statistics); // mock redux store
   const [search, setSearch] = useState('');
   const [results, setResults] = useState([]);
   const [searchBar, setSearchBar] = useState(false);
@@ -61,7 +61,7 @@ const Header = () => {
           !searchBar ? (
             <h1>
               {
-                dates.currentDate === currentDate ? 'Today\'s' : currentDate
+                dates.currentDate === currentDate ? 'Today\'s' : dates.currentDate
               }
               &nbsp;&nbsp;&nbsp;Statistics
             </h1>

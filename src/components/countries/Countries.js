@@ -4,17 +4,17 @@ import { v4 as uuidv4 } from 'uuid';
 import Country from './Country';
 import classes from './Countries.module.css';
 
-function Countries() {
-  const { statistics } = useSelector((state) => state);
+const Countries = () => {
+  const { statistics } = useSelector((state) => state); // mock redux store
   return (
     <div className={classes.countries_container}>
       {
         statistics.countries.map((country) => (
-          <Country country={country} key={uuidv4()} />
+          <Country country={country} key={uuidv4()} /> // integration testing // mock function
         ))
       }
     </div>
   );
-}
+};
 
 export default Countries;

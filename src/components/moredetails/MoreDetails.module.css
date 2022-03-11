@@ -54,31 +54,25 @@ ul {
   text-decoration: none;
 }
 
-.country_stats,
+.statistics,
 .region_stats {
   overflow: auto;
 }
 
 .regions,
-.region_stats {
+.statistics {
   height: 36rem;
 }
 
-.country_stats {
-  height: 39rem;
-}
-
-.country_stats,
-.region_stats,
+.statistics,
 .regions {
   display: grid;
   grid-template-columns: 1fr;
   color: white;
 }
 
-.country_stats li,
-.regions li,
-.region_stats li {
+.statistics li,
+.regions li {
   padding: 2.3rem 1rem;
 }
 
@@ -89,21 +83,18 @@ h4 {
   padding: 0.4rem 0.2rem;
 }
 
-.country_stats li:nth-child(odd),
-.regions li:nth-child(odd),
-.region_stats li:nth-child(odd) {
+.statistics li:nth-child(odd),
+.regions li:nth-child(odd) {
   background-color: #ea4a88;
 }
 
-.country_stats li:nth-child(even),
-.regions li:nth-child(even),
-.region_stats li:nth-child(even) {
+.statistics li:nth-child(even),
+.regions li:nth-child(even) {
   background-color: #cf4378;
 }
 
 @media (min-width: 768px) {
-  .country_stats,
-  .region_stats,
+  .statistics,
   .regions {
     grid-template-columns: 1fr 1fr;
     height: 31rem;
@@ -113,19 +104,15 @@ h4 {
     min-height: 25rem;
   }
 
-  .country_stats > li:nth-child(4n-2),
-  .country_stats > li:nth-child(4n-1),
-  .region_stats > li:nth-child(4n-2),
-  .region_stats > li:nth-child(4n-1),
+  .statistics > li:nth-child(4n-2),
+  .statistics > li:nth-child(4n-1),
   .regions > li:nth-child(4n-2),
   .regions > li:nth-child(4n-1) {
     background-color: #cf4378;
   }
 
-  .country_stats > li:nth-child(4n-3),
-  .country_stats > li:nth-child(4n-4),
-  .region_stats > li:nth-child(4n-3),
-  .region_stats > li:nth-child(4n-4),
+  .statistics > li:nth-child(4n-3),
+  .statistics > li:nth-child(4n-4),
   .regions > li:nth-child(4n-3),
   .regions > li:nth-child(4n-4) {
     background-color: #ea4a88;
@@ -150,9 +137,8 @@ h4 {
     font-size: 1.8rem;
   }
 
-  .country_stats,
-  .regions,
-  .region_stats {
+  .statistics
+  .regions {
     height: 33rem;
   }
 }
