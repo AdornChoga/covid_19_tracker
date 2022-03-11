@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Views from './Views/Views';
 import { actionCreators } from './store/statistics/statistics';
 import Filter from './components/filters/Filter';
+import FetchLoader from './components/loaders/FetchLoader';
 
 const App = () => {
   const { loading, fetchError, filtering } = useSelector((state) => state.statistics);
@@ -15,7 +16,7 @@ const App = () => {
   }, []);
   return (
     <>
-      { loading ? <p>Getting data...</p> : <Views /> }
+      { loading ? <FetchLoader /> : <Views /> }
       { filtering || fetchError ? <Filter fetchError={fetchError} /> : '' }
     </>
   );

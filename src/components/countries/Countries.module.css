@@ -1,15 +1,137 @@
 .countries_container {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  border: solid red;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.link {
+.arrow_icon {
+  margin: 0;
+  align-self: flex-end;
+  color: white;
+  cursor: pointer;
+}
+
+a {
   text-decoration: none;
   color: black;
+}
+
+.country {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   margin: 0;
-  width: 50%;
-  height: 15rem;
-  background-color: #ec4c8a;
+  min-height: 40vw;
+  padding: 0 0.4rem 0.4rem 0;
+}
+
+.country > div {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  text-align: right;
+  color: #e7e3e3;
+}
+
+.country:nth-child(4n-2),
+.country:nth-child(4n-1) {
+  background-color: #cf4278;
+}
+
+.country:nth-child(4n-3),
+.country:nth-child(4n-4) {
+  background-color: #d9427d;
+}
+
+img {
+  filter: invert(30%) sepia(96%) saturate(890%) hue-rotate(299deg) brightness(81%) contrast(89%);
+}
+
+.country_name {
+  font-size: 2.1rem;
+  font-weight: bold;
+}
+
+.country_open_cases {
+  font-size: 1.2rem;
+}
+
+@media (min-width: 500px) {
+  img {
+    width: 17rem;
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .countries_container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  img {
+    width: 17rem;
+    height: auto;
+  }
+
+  .country {
+    min-height: 25rem;
+  }
+
+  .country:nth-child(odd) {
+    background-color: #cf4278;
+  }
+
+  .country:nth-child(even) {
+    background-color: #d9427d;
+  }
+}
+
+@media (min-width: 1100px) {
+  .countries_container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .country {
+    min-height: 30rem;
+    padding: 2rem 1rem;
+  }
+
+  img {
+    width: 17rem;
+  }
+
+  .country_name {
+    font-size: 3rem;
+  }
+
+  .country_open_cases {
+    font-size: 1.7rem;
+  }
+
+  .country:nth-child(odd) {
+    background-color: #cf4278;
+  }
+
+  .country:nth-child(even) {
+    background-color: #d9427d;
+  }
+}
+
+@media (min-width: 1800px) {
+  .countries_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .country {
+    min-height: 25rem;
+  }
+
+  .country:nth-child(odd) {
+    background-color: #cf4278;
+  }
+
+  .country:nth-child(even) {
+    background-color: #d9427d;
+  }
 }

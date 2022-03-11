@@ -26,13 +26,19 @@ const Filter = (props) => {
       dispatch(actionCreators.filterByOneDate(dates.currentDate));
       dispatch(actionCreators.setAppStore(dates.currentDate, 1));
       if (!error) {
-        dispatch(actionCreators.stopFiltering());
+        dispatch(actionCreators.filtering());
       }
     }
   };
 
+  const exitFilter = (e) => {
+    if (e.target.id === 'exit_filter') {
+      dispatch(actionCreators.filtering());
+    }
+  };
+
   return (
-    <div className={classes.container}>
+    <div className={classes.filter_container} id="exit_filter" onClick={exitFilter} aria-hidden="true">
       { error ? (
         <h5 className={classes.fetch_error_msg}>
           <FaExclamationCircle className={classes.info_icon} />
