@@ -9,10 +9,7 @@
 > The statistics provided by this web app are for 191 countries and users can search for a specific country as well as request the statistics from a particular date using a date filter in the app's header.
 
 
-<div align="center">
-  <img align="left" width="50" height="100" src="https://live.staticflickr.com/65535/51932527363_69f5c1d9a5_h.jpg">
-  <img align="right" width="50" height="100" src="https://live.staticflickr.com/65535/51931465342_997f81a5d4_k.jpg">
-</div>
+<img width="30%" src="https://live.staticflickr.com/65535/51932527363_69f5c1d9a5_h.jpg" /><img width="70%" src="https://live.staticflickr.com/65535/51931465342_997f81a5d4_k.jpg" />
 
 ## Built With
 
