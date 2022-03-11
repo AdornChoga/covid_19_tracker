@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../header/Header';
-import Country from '../countries/Country';
 import classes from './MoreDetails.module.css';
+import CountryHeader from './CountryHeader';
 
 const RegionStats = (props) => {
   const { region, country } = props;
@@ -15,9 +15,7 @@ const RegionStats = (props) => {
   return (
     <div className={classes.main_container}>
       <Header />
-      <div className={classes.country}>
-        <Country country={country} />
-      </div>
+      <CountryHeader country={country} />
       <h4>
         Region:&nbsp;&nbsp;&nbsp;
         {regionName}

@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { FaArrowCircleRight, FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import classes from './MoreDetails.module.css';
 import Header from '../header/Header';
-import Country from '../countries/Country';
+import CountryHeader from './CountryHeader';
 
 const CountryStats = (props) => {
   const [regionsMenu, toggleRegions] = useState(false);
@@ -24,7 +24,7 @@ const CountryStats = (props) => {
       <Header />
       <div className={classes.main_container}>
         <div>
-          <Country country={country} className={classes.country} />
+          <CountryHeader country={country} className={classes.country} />
           {
             regions.length > 0 ? (
               <button type="button" onClick={toggleMenu}>
