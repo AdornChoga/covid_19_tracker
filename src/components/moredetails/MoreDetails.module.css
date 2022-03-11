@@ -33,6 +33,11 @@ ul {
   text-decoration: none;
 }
 
+.country_stats {
+  background-color: #fd5294;
+  height: 44.4rem;
+}
+
 .country_stats,
 .region_stats {
   color: white;
