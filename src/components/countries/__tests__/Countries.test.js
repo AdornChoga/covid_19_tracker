@@ -6,10 +6,11 @@ import Countries from '../Countries';
 
 it('should create countries component snapshot', () => {
   const tree = renderer.create(
-  <Provider store={store}>
-    <Router>
-      <Countries />
-    </Router>
-  </Provider>);
+    <Provider store={store}>
+      <Router>
+        <Countries />
+      </Router>
+    </Provider>,
+  );
   expect(tree).toMatchSnapshot();
-})
+});

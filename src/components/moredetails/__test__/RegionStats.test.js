@@ -6,8 +6,10 @@ import RegionStats from '../RegionStats';
 
 it('should create region stats component snapshot', () => {
   const country = {
-    name: 'Canada', image: 'image.png',
-    todayOpenCases: 4949, regions: [],
+    name: 'Canada',
+    image: 'image.png',
+    todayOpenCases: 4949,
+    regions: [],
   };
 
   const region = {
@@ -21,12 +23,13 @@ it('should create region stats component snapshot', () => {
     today_confirmed: 304,
     today_recovered: 134,
     today_deaths: 455,
-  }
+  };
   const tree = renderer.create(
-  <Provider store={store}>
-    <Router>
-      <RegionStats region={region} country={country} />
-    </Router>
-  </Provider>);
+    <Provider store={store}>
+      <Router>
+        <RegionStats region={region} country={country} />
+      </Router>
+    </Provider>,
+  );
   expect(tree).toMatchSnapshot();
 });

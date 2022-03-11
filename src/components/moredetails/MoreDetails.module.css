@@ -59,16 +59,12 @@ ul {
   overflow: auto;
 }
 
-.regions,
-.statistics {
-  height: 36rem;
-}
-
 .statistics,
 .regions {
   display: grid;
   grid-template-columns: 1fr;
   color: white;
+  height: 36rem;
 }
 
 .statistics li,
@@ -137,8 +133,7 @@ h4 {
     font-size: 1.8rem;
   }
 
-  .statistics
-  .regions {
+  .statistics .regions {
     height: 33rem;
   }
 }

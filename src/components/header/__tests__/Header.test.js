@@ -6,10 +6,11 @@ import Header from '../Header';
 
 it('should create header component snapshot', () => {
   const tree = renderer.create(
-  <Provider store={store}>
-    <Router>
-      <Header />
-    </Router>
-  </Provider>);
+    <Provider store={store}>
+      <Router>
+        <Header />
+      </Router>
+    </Provider>,
+  );
   expect(tree).toMatchSnapshot();
-})
+});

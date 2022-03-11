@@ -19,4 +19,4 @@ it('should return object with valid JS properties', () => {
   expect(newObj.name).toEqual(data.name);
   expect(newObj.todayNewCases).toEqual(data.today_new_open_cases);
   expect(newObj.totalCasesRecorded).toEqual(data.today_confirmed);
-})
+});
