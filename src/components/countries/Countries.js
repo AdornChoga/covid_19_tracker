@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import Country from './Country';
@@ -11,9 +10,7 @@ function Countries() {
     <div className={classes.countries_container}>
       {
         statistics.countries.map((country) => (
-          <Link key={uuidv4()} to={`/${country.id}`} className={classes.link}>
-            <Country country={country} />
-          </Link>
+          <Country country={country} key={uuidv4()} />
         ))
       }
     </div>

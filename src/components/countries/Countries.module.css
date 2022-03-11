@@ -3,18 +3,25 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.link {
+.arrow_icon {
+  margin: 0;
+  align-self: flex-end;
+  color: white;
+  cursor: pointer;
+}
+
+a {
   text-decoration: none;
   color: black;
 }
 
-.link:nth-child(4n-2),
-.link:nth-child(4n-1) {
+.country:nth-child(4n-2),
+.country:nth-child(4n-1) {
   background-color: #cf4278;
 }
 
-.link:nth-child(4n-3),
-.link:nth-child(4n-4) {
+.country:nth-child(4n-3),
+.country:nth-child(4n-4) {
   background-color: #d9427d;
 }
 
@@ -62,7 +69,7 @@ img {
   }
 
   img {
-    width: 18rem;
+    width: 17rem;
     height: auto;
   }
 
@@ -70,11 +77,11 @@ img {
     min-height: 25rem;
   }
 
-  .link:nth-child(odd) {
+  .country:nth-child(odd) {
     background-color: #cf4278;
   }
 
-  .link:nth-child(even) {
+  .country:nth-child(even) {
     background-color: #d9427d;
   }
 }
@@ -85,13 +92,12 @@ img {
   }
 
   .country {
-    min-height: 28rem;
+    min-height: 30rem;
     padding: 2rem 1rem;
   }
 
   img {
-    width: 19rem;
-    height: auto;
+    width: 17rem;
   }
 
   .country_name {
@@ -102,11 +108,11 @@ img {
     font-size: 1.7rem;
   }
 
-  .link:nth-child(odd) {
+  .country:nth-child(odd) {
     background-color: #cf4278;
   }
 
-  .link:nth-child(even) {
+  .country:nth-child(even) {
     background-color: #d9427d;
   }
 }
@@ -121,11 +127,11 @@ img {
     min-height: 25rem;
   }
 
-  .link:nth-child(odd) {
+  .country:nth-child(odd) {
     background-color: #cf4278;
   }
 
-  .link:nth-child(even) {
+  .country:nth-child(even) {
     background-color: #d9427d;
   }
 }
