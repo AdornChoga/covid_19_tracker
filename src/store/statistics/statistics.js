@@ -122,4 +122,4 @@ const statistics = (state = initialState, action) => {
 };
 
 export default statistics;
-export { actionCreators };
+export { actionCreators, currentDate };

@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import { FaAngleDoubleLeft, FaFilter } from 'react-icons/fa';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { actionCreators } from '../../store/statistics/statistics';
+import { actionCreators, currentDate } from '../../store/statistics/statistics';
 import classes from './Header.module.css';
 
 const Header = () => {
-  const { countries } = useSelector((state) => state.statistics);
+  const { countries, dates } = useSelector((state) => state.statistics);
   const [search, setSearch] = useState('');
   const [results, setResults] = useState([]);
   const [searchBar, setSearchBar] = useState(false);
@@ -59,7 +59,12 @@ const Header = () => {
       <FaAngleDoubleLeft onClick={() => { navigate(-1); }} className={classes.prev_page} />
       {
           !searchBar ? (
-            <h1>Today&apos;s Statistics</h1>
+            <h1>
+              {
+                dates.currentDate === currentDate ? 'Today\'s' : currentDate
+              }
+              &nbsp;&nbsp;&nbsp;Statistics
+            </h1>
           ) : ''
         }
       <div>
