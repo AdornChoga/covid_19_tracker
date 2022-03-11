@@ -9,7 +9,7 @@ const FetchLoader = () => {
   `;
 
   return (
-    <div className={classes.loader_container}>
+    <div className={classes.loader_container} data-testid="loading_spinner_page">
       <ClipLoader loading css={override} size={100} />
       <h3>Fetching Covid-19 Statistics...</h3>
     </div>

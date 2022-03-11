@@ -5,12 +5,12 @@ import Country from './Country';
 import classes from './Countries.module.css';
 
 const Countries = () => {
-  const { statistics } = useSelector((state) => state); // mock redux store
+  const { statistics } = useSelector((state) => state);
   return (
     <div className={classes.countries_container}>
       {
         statistics.countries.map((country) => (
-          <Country country={country} key={uuidv4()} /> // integration testing // mock function
+          <Country country={country} key={uuidv4()} />
         ))
       }
     </div>

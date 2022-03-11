@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should create details component snapshot 1`] = `
+<ul
+  className="statistics"
+>
+  <li>
+    Today's new cases:   
+    1
+  </li>
+  <li>
+    Today's new recoveries:   
+    2
+  </li>
+  <li>
+    Today's new deaths:   
+    3
+  </li>
+  <li>
+    Total cases recorded:   
+    4
+  </li>
+  <li>
+    Total recoveries recorded:   
+    5
+  </li>
+  <li>
+    Total deaths recorded:   
+    6
+  </li>
+</ul>
+`;

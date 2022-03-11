@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { DateTime } from 'luxon';
-import imagesObj from '../../data/maps';
+import countriesISOCodes from '../../data/maps';
 import createJSProperties from '../../logic/CreateJSProperties';
 
 const currentDate = DateTime.now().toISODate();
@@ -52,8 +52,8 @@ const filterAPIData = (response, date) => {
       return null;
     }
 
-    const [img] = Object.keys(imagesObj)
-      .filter((key) => imagesObj[`${key}`] === country.name);
+    const [img] = Object.keys(countriesISOCodes)
+      .filter((key) => countriesISOCodes[`${key}`] === country.name);
 
     const storedCountry = createJSProperties(country);
 

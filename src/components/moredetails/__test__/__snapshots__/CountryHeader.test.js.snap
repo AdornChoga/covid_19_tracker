@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should create country header component snapshot 1`] = `
+<div
+  className="country"
+>
+  <img
+    alt="map"
+    src="image.png"
+  />
+  <div>
+    <span
+      className="country_name"
+    >
+      Canada
+    </span>
+    <span
+      className="country_open_cases"
+    >
+      Open Cases:   
+      4949
+    </span>
+  </div>
+</div>
+`;

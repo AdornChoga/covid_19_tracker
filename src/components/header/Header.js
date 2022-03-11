@@ -7,7 +7,7 @@ import { actionCreators, currentDate } from '../../store/statistics/statistics';
 import classes from './Header.module.css';
 
 const Header = () => {
-  const { countries, dates } = useSelector((state) => state.statistics); // mock redux store
+  const { countries, dates } = useSelector((state) => state.statistics);
   const [search, setSearch] = useState('');
   const [results, setResults] = useState([]);
   const [searchBar, setSearchBar] = useState(false);
