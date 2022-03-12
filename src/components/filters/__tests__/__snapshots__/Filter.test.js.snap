@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should create filter component snapshot 1`] = `
+<div
+  aria-hidden="true"
+  className="filter_container"
+  id="exit_filter"
+  onClick={[Function]}
+>
+  
+  <form>
+    <input
+      className="current_date"
+      onChange={[Function]}
+      type="date"
+      value=""
+    />
+    <br />
+    <button
+      className="submit"
+      onClick={[Function]}
+      type="submit"
+    >
+      Get Statistics
+    </button>
+  </form>
+</div>
+`;

@@ -1,0 +1,139 @@
+* {
+  font-size: 2rem;
+}
+
+i {
+  cursor: pointer;
+}
+
+.country {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  min-height: 20rem;
+  padding: 0 0.4rem 0.4rem 0;
+  color: #e7e3e3;
+}
+
+.country > div {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.country_name {
+  font-size: 2.1rem;
+  font-weight: bold;
+}
+
+.country_open_cases {
+  font-size: 1.2rem;
+}
+
+ul {
+  margin: 0;
+}
+
+.regions {
+  height: 41.1rem;
+  overflow: auto;
+  color: white;
+}
+
+.regions li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+.statistics,
+.region_stats {
+  overflow: auto;
+}
+
+.statistics,
+.regions {
+  display: grid;
+  grid-template-columns: 1fr;
+  color: white;
+  height: 36rem;
+}
+
+.statistics li,
+.regions li {
+  padding: 2.3rem 1rem;
+}
+
+h4 {
+  margin: 0;
+  background-color: #ee3b80;
+  color: white;
+  padding: 0.4rem 0.2rem;
+}
+
+.statistics li:nth-child(odd),
+.regions li:nth-child(odd) {
+  background-color: #ea4a88;
+}
+
+.statistics li:nth-child(even),
+.regions li:nth-child(even) {
+  background-color: #cf4378;
+}
+
+@media (min-width: 768px) {
+  .statistics,
+  .regions {
+    grid-template-columns: 1fr 1fr;
+    height: 31rem;
+  }
+
+  .country {
+    min-height: 25rem;
+  }
+
+  .statistics > li:nth-child(4n-2),
+  .statistics > li:nth-child(4n-1),
+  .regions > li:nth-child(4n-2),
+  .regions > li:nth-child(4n-1) {
+    background-color: #cf4378;
+  }
+
+  .statistics > li:nth-child(4n-3),
+  .statistics > li:nth-child(4n-4),
+  .regions > li:nth-child(4n-3),
+  .regions > li:nth-child(4n-4) {
+    background-color: #ea4a88;
+  }
+}
+
+@media (min-width: 1200px) {
+  .country {
+    min-height: 31rem;
+    color: rgb(255, 255, 255);
+  }
+
+  .country img {
+    width: 18rem;
+  }
+
+  .country_name {
+    font-size: 3.5rem;
+  }
+
+  .country_open_cases {
+    font-size: 1.8rem;
+  }
+
+  .statistics .regions {
+    height: 33rem;
+  }
+}
